@@ -2,10 +2,12 @@ import { Component, ViewChild } from "@angular/core";
 import { Customer, Representative } from "./customer";
 import { CustomerService } from "./customerservice";
 import { MessageService } from "primeng/api";
+import { Table } from 'primeng/table';
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
+  styleUrls: ['./app.component.scss'],
   providers: [MessageService]
 })
 export class AppComponent {
@@ -53,4 +55,8 @@ export class AppComponent {
       { label: "Proposal", value: "proposal" }
     ];
   }
+
+  clear(table: Table) {
+    table.clear();
+}
 }
